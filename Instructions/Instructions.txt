@@ -1,0 +1,45 @@
+1. Page Designing:
+- Design a we page for an e-commerce application. 
+- This page will be use by a vendor, who is one of the user of the system.
+- The vendor will use this page to view high-level insights, including
+    - Total revenue generated in sales
+    - Expected revenue to be generated from place orders
+    - Capital in stock
+    - Number of products out of stock.
+
+- The vendor will also use the page to add products to the system.
+- Finally, The vendor will use the page to view all products added to the system.
+
+2. Page Loading / Rendering:
+- On load / Render, The page should be looking as in image one below.
+    [Image]
+- The layout of the "sales & Orders" insights card should be as it is in the image,
+    but the values may be different.
+- The layout of the "In-stock" insights card should be as it is in the image,
+    but the values may be different.
+- The layout of the "Out-of-stock" insights card should be as it is in the image,
+    but the values may be different.
+- The "Add Product" form should be as it is in the image,
+    all fields must be empty.
+- The "Products List" table should display the all the products already added to the system,
+    Pagination features may be added.
+
+3. Form Submission:
+- The User should be able to fill and submit the form
+- Upon submission, if the form is valid, 
+    - data should be stored into the database,
+    - the form should be cleared and reset to its default appearance
+    - the success alert box should show up at the top of the form
+    - and the products list table should be updated.
+
+4. Form Validation:
+    - No field must be empty on submission
+    - Each value in each of the form fields must be valid and meaningfull
+
+5. Form Clearance:
+- Upon form clearance,
+    - All the fileds must be emptied
+    - the form ust be reset to its default appearance
+    - the success alert box should show up at the top of the form
+    - and the products list table should be updated.
+
