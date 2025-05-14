@@ -3,11 +3,11 @@ const router = express.Router();
 const passport = require("passport");
 //import models
 const Signup = require("../models/Signup");
-router.get("/signingup", (req, res) => {
+router.get("/", (req, res) => {
   res.render("signup");
 });
 
-router.post("/signingup", async (req, res) => {
+router.post("/", async (req, res) => {
   try {
     const user = new Signup(req.body);
     let existingUser = await Signup.findOne({
