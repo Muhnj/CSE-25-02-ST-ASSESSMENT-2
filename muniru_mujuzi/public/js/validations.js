@@ -69,7 +69,11 @@ function validateStudentForm() {
     isValid = false;
   }
 
-  return isValid;
+   if (isValid) {
+    alert("Student successfully added!");
+    return true;
+  }
+
 }
 
   const countries = ["Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Uganda","Rwanda", "Burundi", "Zimbabwe"];
