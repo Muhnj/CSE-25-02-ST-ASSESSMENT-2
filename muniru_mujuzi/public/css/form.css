@@ -10,6 +10,9 @@
       background: white;
       padding: 30px 40px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      color :#4c1a57;
+      font-weight: bold;
+      font-size: 15px;
     }
 
     .header {
