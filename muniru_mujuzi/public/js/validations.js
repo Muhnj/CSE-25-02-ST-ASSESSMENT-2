@@ -71,3 +71,14 @@ function validateStudentForm() {
 
   return isValid;
 }
+
+  const countries = ["Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Uganda","Rwanda", "Burundi", "Zimbabwe"];
+  const select = document.getElementById("country");
+
+  countries.forEach(country => {
+    const option = document.createElement("option");
+    option.value = country;
+    option.textContent = country;
+    select.appendChild(option);
+  });
+

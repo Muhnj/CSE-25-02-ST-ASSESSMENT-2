@@ -1,0 +1,33 @@
+doctype html
+html(lang="en")
+  head
+    title Student List
+    link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css")
+  body
+    .container.mt-5
+      h1.text-center.mb-4 Student List
+
+      table.table.table-bordered
+        thead.table-dark
+          tr
+            th ID
+            th SURNAME
+            th GIVEN NAME           
+            th DOB 
+            th COUNTRY
+            th RESIDENCE
+            th
+        tbody
+          if students.length
+            each student in students
+              tr
+                td #{student._id}
+                td #{student.surname}
+                td #{student.givenname}                
+                td #{student.dob}
+                td #{student.country}
+                td #{student.residence}
+                td #{student.email}
+          else
+            tr
+              td(colspan="5").text-center No students found.

@@ -24,7 +24,7 @@ body {
 }
 
 h1 {
-  color: #2e8b57;
+  color: #4c1a57;
   text-align: center;
   margin-bottom: 30px;
   display: flex;
@@ -94,7 +94,7 @@ h1 i {
 }
 
 .submit-btn {
-  background-color: #2e8b57;
+  background-color: #4c1a57;
   color: white;
   padding: 12px;
   border: none;
@@ -117,7 +117,7 @@ h1 i {
 
 .login-link {
   text-align: center;
-  color: #2e8b57;
+  color: #4c1a57;
   text-decoration: none;
   display: flex;
   align-items: center;
