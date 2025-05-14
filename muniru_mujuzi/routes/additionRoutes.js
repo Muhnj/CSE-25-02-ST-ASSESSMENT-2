@@ -14,7 +14,7 @@ router.post("/addition", async (req, res) => {
     console.log(student);
     await student.save();
 
-    res.redirect("/addition");
+    res.redirect("/studentslist");
   } catch (error) {
     res.status(400).render("addition");
     console.log(error);
@@ -31,19 +31,29 @@ router.get("/studentslist", async (req, res) => {
     res.status(400).send("unable to find student in the db");
   }
 });
-router.get("/updatechild/:id", async (req, res) => {
+router.get("/studentprof/:id", async (req, res) => {
   try {
-    const updateStudent = await Student.findOne({ _id: req.params.id });
-    if (!updateStudent) {
-      return res.status(404).send("Child not found");
+    const student = await Student.findById(req.params.id).lean(); // lean() gives plain JS object
+
+    if (!student) {
+      return res.status(404).send("Student not found");
     }
-    res.render("update_child", {
-      student: updateStudent  
+
+    res.render("profile", {
+      surname: student.surname,
+      givenname: student.givenname,
+      gender: student.gender,
+      dob: student.dob,
+      country: student.country,
+      residence: student.residence,
+      phone: student.phone,
+      email: student.email,
+      skills: student.skills,
+      projects: student.projects
     });
-  } catch (error) {
-    console.error("Update error:", error);
-    res.status(400).send("Unable to find this child in the db");
+  } catch (err) {
+    console.error(err);
+    res.status(500).send("Server Error");
   }
 });
-
 module.exports = router;

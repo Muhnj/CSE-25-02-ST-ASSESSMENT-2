@@ -1,11 +1,11 @@
 doctype html
 html(lang="en")
   head
-    title Student List
+    title Student Profile
     link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css")
   body
     .container.mt-5
-      h1.text-center.mb-4 Student List
+      h1.text-center.mb-4 Student Profile
 
       table.table.table-bordered
         thead.table-dark
@@ -31,3 +31,5 @@ html(lang="en")
           else
             tr
               td(colspan="5").text-center No students found.
+      .text-center.mt-4
+        a.btn.btn-primary(href="/addition") Back to Form         

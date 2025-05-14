@@ -1,33 +1,72 @@
 doctype html
 html(lang="en")
   head
-    title Profile Page
     meta(charset="UTF-8")
-    meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    title Student Profile
+    link(href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css", rel="stylesheet")    
+    style.
+      .bg-purple {
+        background-color: #4c1a57;
+      }
+
   body
     .container.mt-5
-      .row.justify-content-center
-        .col-md-6
-          .card.shadow-lg
-            .card-header.bg-primary.text-white.text-center
-              h2.mb-0 #{student.name}'s Profile
+      .card.shadow-lg
+        .card-header.bg-purple.text-white.text-center
+          h2 Student Profile Summary
 
-            .card-body             
-              
-              ul.list-group
-                li.list-group-item
-                  strong Name: 
-                  |  #{student.name}
-                li.list-group-item
-                  strong Email: 
-                  |  #{student.email}
-                li.list-group-item
-                  strong Age: 
-                  |  #{student.age}
-                li.list-group-item
-                  strong Gender: 
-                  |  #{student.gender}
+        .card-body
+          .row.mb-3
+            .col-md-6
+              strong Sur Name:
+              p.mb-0 #{student.surname}
+            .col-md-6
+              strong Given Name:
+              p.mb-0 #{givenname}
 
-            .card-footer.text-center
-              a.btn.btn-secondary(href="/edit-profile") Edit Profile
+          .row.mb-3
+            .col-md-6
+              strong Gender:
+              p.mb-0 #{gender}
+            //- .col-md-6
+            //-   strong Date of Birth:
+            //-   p.mb-0 #{dob.toDateString ? dob.toDateString() : dob}
+
+          .row.mb-3
+            .col-md-6
+              strong Country:
+              p.mb-0 #{country}
+            .col-md-6
+              strong Place of Residence:
+              p.mb-0 #{residence}
+
+          .row.mb-3
+            .col-md-6
+              strong Phone Number:
+              p.mb-0 #{phone}
+            .col-md-6
+              strong Email Address:
+              p.mb-0 #{email}
+
+          .row.mb-3
+            .col-md-6
+              strong Skills:
+              if skills
+                ul
+                  each skill in skills.split(',').map(s => s.trim())
+                    li= skill
+              else
+                p.text-muted No skills listed.
+
+            .col-md-6
+              strong Projects:
+              if projects
+                ul
+                  each project in projects.split(',').map(p => p.trim())
+                    li= project
+              else
+                p.text-muted No projects listed.
+
+      .text-center.mt-4
+        a.btn.btn-primary(href="/addition") Back to Form
