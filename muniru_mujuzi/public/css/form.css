@@ -1,0 +1,44 @@
+
+    body {
+      background-color: #f5f5f5;
+      font-family: Arial, sans-serif;
+    }
+
+    .form-container {
+      max-width: 800px;
+      margin: 30px auto;
+      background: white;
+      padding: 30px 40px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .header {
+      background-color: #4c1a57;
+      color: white;
+      padding: 15px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .form-label span {
+      color: red;
+    }
+
+    .btn-submit {
+      background-color: #4c1a57;
+      color: white;
+    }
+
+    .btn-cancel {
+      background-color: #e4d5e8;
+      color: #4c1a57;
+    }
+
+    .form-control::placeholder {
+      font-size: 0.9em;
+    }
+
+    .form-section {
+      margin-bottom: 15px;
+    }
+  

@@ -1,0 +1,63 @@
+meta(charset="UTF-8")
+meta(name="viewport", content="width=device-width,initial-scale=1")
+title Admin Signup - Kindergarten System
+link(rel="stylesheet", href="/css/signup.css")
+link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css")
+
+.container
+  .form-container
+    h1 
+      i.fas.fa-user-shield
+      | Admin Registration
+    form#adminSignupForm(action="/signingup" method="post")
+      .form-row
+        .form-group
+          label(for="firstName") First Name:
+          input#firstName(type="text", name="fname" )
+        .form-group
+          label(for="lastName") Last Name:
+          input#lastName(type="text", name="lname" )
+      .form-group
+        label(for="email") Email:
+        input#email(type="email", name="email" )
+      .form-group
+        label(for="phone") Phone Number:
+        input#phone(type="tel", name="phone")
+      .form-row
+        .form-group
+          label(for="gender") Gender:
+          select#gender(name="gender")
+            option(value="") Select Gender
+            option(value="male") Male
+            option(value="female") Female
+        .form-group
+          label(for="address") Address:
+          input#address(type="text", name="address")
+      .form-row
+        .form-group
+          label(for="password") Password:
+          .password-input
+            input#password(type="password", name="password")
+            i.fas.fa-eye.toggle-password
+        .form-group
+          label(for="confirmPassword") Confirm Password:
+          .password-input
+            input#confirmPassword(type="password", name="confirmpassword")
+            i.fas.fa-eye.toggle-password
+      .form-actions
+        button.submit-btn(type="submit")
+          i.fas.fa-user-plus
+          | Register
+        a.login-link(href="/login")
+          i.fas.fa-sign-in-alt
+          | Already have an account? Login here
+
+script.
+  document.querySelectorAll('.toggle-password').forEach(icon => {
+    icon.addEventListener('click', function() {
+      const input = this.previousElementSibling;
+      const type = input.getAttribute('type') === 'password' ? 'text' : 'password';
+      input.setAttribute('type', type);
+      this.classList.toggle('fa-eye-slash');
+    });
+  });
