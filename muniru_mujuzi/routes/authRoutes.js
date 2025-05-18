@@ -41,7 +41,7 @@ router.post(
   (req, res) => {
     console.log(req.body);
     req.session.user = req.user;
-    res.redirect("/admin");
+    res.redirect("/addition");
   }
 );
 

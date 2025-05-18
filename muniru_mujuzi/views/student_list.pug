@@ -24,7 +24,7 @@ html(lang="en")
                 td #{student._id}
                 td #{student.surname}
                 td #{student.givenname}                
-                td #{student.dob}
+                td= moment(student.dob).format('MMMM Do, YYYY')
                 td #{student.country}
                 td #{student.residence}
                 td #{student.email}
@@ -32,4 +32,4 @@ html(lang="en")
             tr
               td(colspan="5").text-center No students found.
       .text-center.mt-4
-        a.btn.btn-primary(href="/addition") Back to Form         
+        a.btn.btn-secondary(href="/addition") Back to Form         
